@@ -7,8 +7,8 @@ autosize: true
 Goal of this presentation
 ========================================================
 For this project we make a reactive histogram using the iris dataset that  comes with R.
-We will use the render plot() function to render the plot and the        plotOutput() function in the shiny UI to display the plot.
-We will also use the input widgets learned so far: selectInput(),   sliderInput() and radioButtons(), especially the radio button to display the different colors.
+We will use the render plot() function to render the plot and the plotOutput() function in the shiny UI to display the plot.
+We will also use the input widgets learned so far: selectInput(), sliderInput() and radioButtons(), especially the radio button to display the different colors.
 
 The data set consists of 50 samples from each of three species of Iris (Iris setosa, Iris virginica and Iris versicolor). Four features were measured from each sample: the length and the width of the sepals and petals, in centimetres. 
 
