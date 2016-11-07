@@ -1,0 +1,9 @@
+name: My_Reproducible_Shiny_App
+account: stryvers
+server: shinyapps.io
+appId: 135969
+bundleId: 606747
+url: https://stryvers.shinyapps.io/My_Reproducible_Shiny_App/
+when: 1478397063.25814
+asMultiple: FALSE
+asStatic: FALSE
