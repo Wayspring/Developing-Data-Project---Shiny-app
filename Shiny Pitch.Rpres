@@ -23,21 +23,45 @@ str(iris)
 ```
 
 
-Slide with Code
+UI.R
 =========================================================
+```{r,echo=TRUE}
 
-
-
-
-
-
-
-Slide With Plot
+library(shiny) 
+# Define UI for application that draws the Distribution histogram
+shinyUI(fluidPage(                                                                                                                                                                                                                                                     
+  # Application header
+  titlePanel(title = h4("Iris Dataset Render Plot() ", align="center")),
+  sidebarLayout(
+    # Sidebar panel
+    sidebarPanel(
+      selectInput("var","1. Select the variable from the iris dataset",
+                  choices = c("Sepal.Length" = 1, "Sepal.Width" = 2, "Petal.Length" = 3, "Petal.Width" = 4),selected = 1),
+      br(),
+      sliderInput("bins", "2. Select the number of BINs for histogram", min=5, max=25, value=15),
+      br(),
+      radioButtons("color", "3. Select the color of histogram",
+                   choices = c("Sky blue", "Red", "Green"), selected = "Sky blue")
+    ),
+    # Main Panel    
+    mainPanel(
+      plotOutput("myhist")
+    )
+  )
+)
+)
+```
+SERVER.R
 ========================================================
 
-```{r setup, include=FALSE}
-opts_chunk$set(cache=TRUE)}
+ ```{r, echo = TRUE}
+ library(shiny)
+shinyServer(
+  function(input, output){
+    output$myhist <- renderPlot({
+      colm <- as.numeric(input$var)
+      hist(iris[,colm], breaks=seq(0, max(iris[,colm]), l=input$bins+1),col=input$color, main="Histogram of Iris dataset", xlab=names(iris[colm])) 
+    })
+  }
+)
 ```
-![alt text](file:///C:/Users/SPRINGLE FAMILY/Documents/My Reproducible Shiny App/Shiny Pitch-figure/shiny-widget-kmeans.png)
-
-

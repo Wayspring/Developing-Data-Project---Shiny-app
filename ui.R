@@ -5,7 +5,7 @@
 
 library(shiny) 
 # Define UI for application that draws the Distribution histogram
-shinyUI(fluidPage(                                                                                                                                                                                                                                                                                                                                                                                                              shinyUI(fluidPage(
+shinyUI(fluidPage(                                                                                                                                                                                                                                                                                                                                                                                                              
   # Application header
   titlePanel(title = h4("Iris Dataset Render Plot() ", align="center")),
   sidebarLayout(
@@ -26,5 +26,4 @@ shinyUI(fluidPage(                                                              
   )
 )
 )
-)
-)
+
